@@ -22,7 +22,6 @@ const VideoCard = () => {
     ]
 
     return (
-
         <Grid container justify="flex-start" spacing={2} className={classes.root}>
             {
                 videoIds.map( (item, idx) => (

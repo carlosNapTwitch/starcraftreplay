@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    marginRight: '25px',
+    marginLeft: '5px',
+    marginRight: '70px'
   },
   toolbar: {
     backgroundColor: '#ffffff14',
@@ -26,6 +27,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar() {
   const classes = useStyles();
+
+  const [logo, setLogo] = useState(null)
+
+  useEffect(() => {
+    setLogo(getRandomInt(0,2))
+  }, [])
 
   const getRandomInt = (min, max) => {
     min = Math.ceil(min);
@@ -39,7 +46,7 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static" className={classes.toolbar}>
         <Toolbar>
-          <img src={logos[getRandomInt(0,2)]} alt="logo" width="50" height="50" />
+          <img src={logos[logo]} alt="logo" width={logo === 1 ? 30 : 45} height="45" />
           <Typography ml="1" variant="h6" className={classes.title}>
             StarCraftReplays
           </Typography>
