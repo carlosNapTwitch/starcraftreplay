@@ -4,7 +4,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import terran from './images/prottos.png';
+import prottos from './images/prottos.png';
+import terran from './images/terran.png';
+import zerg from './images/zerg.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,11 +23,19 @@ const useStyles = makeStyles((theme) => ({
 export default function ButtonAppBar() {
   const classes = useStyles();
 
+  const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+  const logos = [terran, prottos, zerg];
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <img src={terran} alt="logo" width="50"/>
+          <img src={logos[getRandomInt(0,2)]} alt="logo" width="50" height="50" />
           <Typography ml="1" variant="h6" className={classes.title}>
             StarCraftReplays
           </Typography>
