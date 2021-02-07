@@ -28,7 +28,7 @@ const VideoCard = () => {
                 videoIds.map( (item, idx) => (
                     <Grid item xs={4} key={idx+'_video'}>
                         <Box>
-                            <iframe width="320" height="215" src={`https://www.youtube.com/embed/${item}`}></iframe>
+                            <iframe allowfullscreen="allowfullscreen" width="320" height="215" src={`https://www.youtube.com/embed/${item}?controls=1`} frameborder="0"></iframe>
                         </Box>
                     </Grid>
                 ))

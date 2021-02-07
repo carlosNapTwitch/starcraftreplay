@@ -10,7 +10,7 @@ import VideosCard from '../videoCard/videocard';
 import {
     makeStyles,
     withStyles
-  } from '@material-ui/core/styles';
+} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,13 +31,14 @@ const useStyles = makeStyles((theme) => ({
 
 const FormButton = withStyles((theme) => ({
     root: {
-      color: theme.palette.getContrastText(grey[700]),
-      backgroundColor: lightBlue[500],
-      '&:hover': {
-        backgroundColor: lightBlue[700],
-      },
+        borderRadius: '0px',
+        color: theme.palette.getContrastText(grey[700]),
+        backgroundColor: lightBlue[500],
+        '&:hover': {
+            backgroundColor: lightBlue[700],
+        },
     },
-  }))(Button);
+}))(Button);
 
 const SearchFrom = () => {
     const classes = useStyles();
@@ -50,7 +51,7 @@ const SearchFrom = () => {
                             <form className={classes.form} noValidate autoComplete="off" >
                                 <TextField className={classes.input} label="Nombre Jugador" />
                                 <TextField className={classes.input} label="Nombre torneo" />
-                                <FormButton size="small">Buscar</FormButton>
+                                <FormButton size="small" disableElevation>Buscar</FormButton>
                             </form>
                         </Box>
                     </Grid>
