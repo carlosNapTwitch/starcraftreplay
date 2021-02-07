@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import prottos from './images/prottos.png';
 import terran from './images/terran.png';
 import zerg from './images/zerg.png';
+import SearchForm from './components/searchForm/searchform';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,8 +17,11 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1,
+    marginRight: '25px',
   },
+  toolbar: {
+    backgroundColor: '#ffffff14',
+  }
 }));
 
 export default function ButtonAppBar() {
@@ -33,7 +37,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.toolbar}>
         <Toolbar>
           <img src={logos[getRandomInt(0,2)]} alt="logo" width="50" height="50" />
           <Typography ml="1" variant="h6" className={classes.title}>
@@ -45,6 +49,7 @@ export default function ButtonAppBar() {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
+      <SearchForm />
     </div>
   );
 }
