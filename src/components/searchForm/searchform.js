@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { lightBlue, grey } from '@material-ui/core/colors';
+import VideosCard from '../videoCard/videocard';
 
 import {
     makeStyles,
@@ -54,6 +55,7 @@ const SearchFrom = () => {
                         </Box>
                     </Grid>
                 </Grid>
+                <VideosCard />
             </Container>
         </Box>
     )
